@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     private double resultado;
     private int operacion = 0;
-    private String operador, mostrar, historial = "", historial2 = "", reserva;
+    private String operador, mostrar, historial = "", historial2 = "";
 
 
 
@@ -179,10 +179,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //to do
+    public void cambiar_simbolo(View v){
+
+    }
+
     public void operacionAnterior(){
 
-        reserva = tv_resultado.getText().toString();
-        double numero = Double.parseDouble(reserva);
+        double numero = Double.parseDouble(mostrar);
 
         if (operacion == 0) {
             resultado = numero;
@@ -194,6 +198,8 @@ public class MainActivity extends AppCompatActivity {
             resultado = resultado * numero;
         } else if (operacion == 4) {
             resultado = resultado / numero;
+        }else if(operacion == 5){
+            resultado = resultado;
         }
 
     }
@@ -256,6 +262,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //to do
+    public void porcentaje(View v){
+
+    }
+
     public void clean (View v){
 
         mostrar = tv_resultado.getText().toString();
@@ -272,7 +283,6 @@ public class MainActivity extends AppCompatActivity {
 
         mostrar = "";
         tv_resultado.setText(mostrar);
-        reserva = "";
         operador = "";
         historial = "";
         historial2 = "";
@@ -284,9 +294,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void igual (View v){
 
-        mostrar = tv_resultado.getText().toString();
-        mostrar = mostrar + "1";
-        System.out.println( mostrar );
         if (tv_resultado.length()>0){
 
             if (operador.equals("-")) {
@@ -306,6 +313,8 @@ public class MainActivity extends AppCompatActivity {
                 tv_resultado.setText(String.valueOf(resultado));
             }
         }
+
+        operacion = 5;
     }
 
 

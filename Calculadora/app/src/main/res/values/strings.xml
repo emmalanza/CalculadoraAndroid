@@ -11,6 +11,7 @@
     <string name="btn_igual"> = </string>
     <string name="btn_pto"> . </string>
     <string name="btn_porcentaje"> % </string>
+    <string name="btn_simbolo"> +/- </string>
     <string name="btn_1"> 1 </string>
     <string name="btn_2"> 2 </string>
     <string name="btn_3"> 3 </string>
