@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     private double resultado;
     private int operacion = 0;
-    private String operador, mostrar, historial = "", historial2 = "";
+    private String operador, numero, historial = "", historial2 = "";
 
 
 
@@ -69,90 +69,90 @@ public class MainActivity extends AppCompatActivity {
 
     public void btn1(View v){
 
-        mostrar = tv_resultado.getText().toString();
-        mostrar = mostrar + "1";
-        tv_resultado.setText(mostrar);
-        historial = historial2 + mostrar;
+        numero = tv_resultado.getText().toString();
+        numero = numero + "1";
+        tv_resultado.setText(numero);
+        historial = historial2 + numero;
         tv_historial.setText(historial);
 
     }
 
     public void btn2(View v){
 
-        mostrar = tv_resultado.getText().toString();
-        mostrar = mostrar + "2";
-        tv_resultado.setText(mostrar);
-        historial =historial2 + mostrar;
+        numero = tv_resultado.getText().toString();
+        numero = numero + "2";
+        tv_resultado.setText(numero);
+        historial =historial2 + numero;
         tv_historial.setText(historial);
 
     }
 
     public void btn3(View v){
 
-        mostrar = tv_resultado.getText().toString();
-        mostrar = mostrar + "3";
-        tv_resultado.setText(mostrar);
-        historial = historial2 + mostrar;
+        numero = tv_resultado.getText().toString();
+        numero = numero + "3";
+        tv_resultado.setText(numero);
+        historial = historial2 + numero;
         tv_historial.setText(historial);
 
     }
 
     public void btn4(View v){
 
-        mostrar = tv_resultado.getText().toString();
-        mostrar = mostrar + "4";
-        tv_resultado.setText(mostrar);
-        historial = historial2 + mostrar;
+        numero = tv_resultado.getText().toString();
+        numero = numero + "4";
+        tv_resultado.setText(numero);
+        historial = historial2 + numero;
         tv_historial.setText(historial);
 
     }
 
     public void btn5(View v){
 
-        mostrar = tv_resultado.getText().toString();
-        mostrar = mostrar + "5";
-        tv_resultado.setText(mostrar);
-        historial = historial2 + mostrar;
+        numero = tv_resultado.getText().toString();
+        numero = numero + "5";
+        tv_resultado.setText(numero);
+        historial = historial2 + numero;
         tv_historial.setText(historial);
 
     }
 
     public void btn6(View v){
 
-        mostrar = tv_resultado.getText().toString();
-        mostrar = mostrar + "6";
-        tv_resultado.setText(mostrar);
-        historial =historial2 + mostrar;
+        numero = tv_resultado.getText().toString();
+        numero = numero + "6";
+        tv_resultado.setText(numero);
+        historial =historial2 + numero;
         tv_historial.setText(historial);
 
     }
 
     public void btn7(View v){
 
-        mostrar = tv_resultado.getText().toString();
-        mostrar = mostrar + "7";
-        tv_resultado.setText(mostrar);
-        historial = historial2 + mostrar;
+        numero = tv_resultado.getText().toString();
+        numero = numero + "7";
+        tv_resultado.setText(numero);
+        historial = historial2 + numero;
         tv_historial.setText(historial);
 
     }
 
     public void btn8(View v){
 
-        mostrar = tv_resultado.getText().toString();
-        mostrar = mostrar + "8";
-        tv_resultado.setText(mostrar);
-        historial = historial2 + mostrar;
+        numero = tv_resultado.getText().toString();
+        numero = numero + "8";
+        tv_resultado.setText(numero);
+        historial = historial2 + numero;
         tv_historial.setText(historial);
 
     }
 
     public void btn9(View v){
 
-        mostrar = tv_resultado.getText().toString();
-        mostrar = mostrar + "9";
-        tv_resultado.setText(mostrar);
-        historial = historial2 + mostrar;
+        numero = tv_resultado.getText().toString();
+        numero = numero + "9";
+        tv_resultado.setText(numero);
+        historial = historial2 + numero;
         tv_historial.setText(historial);
 
     }
@@ -160,10 +160,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void btn0(View v){
 
-        mostrar = tv_resultado.getText().toString();
-        mostrar = mostrar + "0";
-        tv_resultado.setText(mostrar);
-        historial = historial2 + mostrar;
+        numero = tv_resultado.getText().toString();
+        numero = numero + "0";
+        tv_resultado.setText(numero);
+        historial = historial2 + numero;
         tv_historial.setText(historial);
 
 
@@ -171,22 +171,30 @@ public class MainActivity extends AppCompatActivity {
 
     public void btn_pto(View v){
 
-        mostrar = tv_resultado.getText().toString();
-        mostrar = mostrar + ".";
-        tv_resultado.setText(mostrar);
-        historial = historial2 + mostrar;
+        numero = tv_resultado.getText().toString();
+        numero = numero + ".";
+        tv_resultado.setText(numero);
+        historial = historial2 + numero;
         tv_historial.setText(historial);
 
     }
 
-    //to do
+    /*to do
     public void cambiar_simbolo(View v){
 
-    }
+        if (tv_resultado.length() > 0) {
+            operacionAnterior();
+            tv_resultado.setText("");
+            numero = "-" + numero;
+            tv_resultado.setText(numero);
+            //operacion = 5;
+        }
+
+    }*/
 
     public void operacionAnterior(){
 
-        double numero = Double.parseDouble(mostrar);
+        double numero = Double.parseDouble(this.numero);
 
         if (operacion == 0) {
             resultado = numero;
@@ -198,9 +206,18 @@ public class MainActivity extends AppCompatActivity {
             resultado = resultado * numero;
         } else if (operacion == 4) {
             resultado = resultado / numero;
-        }else if(operacion == 5){
+        }else if(operacion==5) {
             resultado = resultado;
+        }else if(operacion == 6){
+            resultado = resultado;
+
+            tv_historial.setText("");
+            historial = "";
+            historial2 = "";
+            historial = String.valueOf(resultado);
         }
+
+
 
     }
 
@@ -262,17 +279,23 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    //to do
+
     public void porcentaje(View v){
+        if (tv_resultado.length() > 0) {
+            operacionAnterior();
+            tv_resultado.setText("");
+            resultado = resultado/100;
+            tv_resultado.setText(String.valueOf(resultado));
+        }
 
     }
 
     public void clean (View v){
 
-        mostrar = tv_resultado.getText().toString();
-        if(mostrar.length()>0)
-        mostrar = mostrar.substring(0,mostrar.length()-1);
-        tv_resultado.setText(mostrar);
+        numero = tv_resultado.getText().toString();
+        if(numero.length()>0)
+        numero = numero.substring(0, numero.length()-1);
+        tv_resultado.setText(numero);
         if(historial.length()>0)
         historial = historial.substring(0,historial.length()-1);
         tv_historial.setText(historial);
@@ -281,8 +304,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void allClean(View v){
 
-        mostrar = "";
-        tv_resultado.setText(mostrar);
+        numero = "";
+        tv_resultado.setText(numero);
         operador = "";
         historial = "";
         historial2 = "";
@@ -314,7 +337,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        operacion = 5;
+        operacion = 6;
     }
 
 

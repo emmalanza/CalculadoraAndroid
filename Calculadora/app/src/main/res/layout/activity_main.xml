@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:foregroundGravity="center"
     android:gravity="center"
@@ -14,13 +14,12 @@
     <TableLayout
         android:id="@+id/tl_contenedor"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="664dp"
         android:layout_gravity="center"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginBottom="30dp"
-        android:background="@drawable/border"
         android:foregroundGravity="center"
         android:gravity="center"
         android:padding="10dp">
@@ -325,6 +324,7 @@
                 android:id="@+id/btn_porcen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="porcentaje"
                 android:text="@string/btn_porcentaje"
                 android:textStyle="bold" />
 
