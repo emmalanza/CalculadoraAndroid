@@ -290,7 +290,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void clean (View v){
+    public void clean (View v){ //modificar
 
         numero = tv_resultado.getText().toString();
         if(numero.length()>0)
