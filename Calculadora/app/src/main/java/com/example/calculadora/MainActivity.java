@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     private double resultado;
     private int operacion = 0;
+    private boolean negativo = false;
     private String operador, numero, historial = "", historial2 = "";
 
 
@@ -64,108 +65,175 @@ public class MainActivity extends AppCompatActivity {
         tv_historial = findViewById(R.id.tv_historial);
 
 
-
     }
 
     public void btn1(View v){
+
+        if(operacion == 6){
+            tv_resultado.setText("");
+            historial = "";
+            historial2="";
+            resultado = 0;
+            operacion = 0;
+        }
 
         numero = tv_resultado.getText().toString();
         numero = numero + "1";
         tv_resultado.setText(numero);
         historial = historial2 + numero;
-        tv_historial.setText(historial);
 
     }
 
     public void btn2(View v){
 
+        if(operacion == 6){
+            tv_resultado.setText("");
+            historial = "";
+            historial2="";
+            resultado = 0;
+            operacion = 0;
+        }
+
         numero = tv_resultado.getText().toString();
         numero = numero + "2";
         tv_resultado.setText(numero);
-        historial =historial2 + numero;
-        tv_historial.setText(historial);
+        historial = historial2 + numero;
 
     }
 
     public void btn3(View v){
 
+        if(operacion == 6){
+            tv_resultado.setText("");
+            historial = "";
+            historial2="";
+            resultado = 0;
+            operacion = 0;
+        }
+
         numero = tv_resultado.getText().toString();
         numero = numero + "3";
         tv_resultado.setText(numero);
         historial = historial2 + numero;
-        tv_historial.setText(historial);
 
     }
 
     public void btn4(View v){
 
+        if(operacion == 6){
+            tv_resultado.setText("");
+            historial = "";
+            historial2="";
+            resultado = 0;
+            operacion = 0;
+        }
+
         numero = tv_resultado.getText().toString();
         numero = numero + "4";
         tv_resultado.setText(numero);
-        historial = historial2 + numero;
-        tv_historial.setText(historial);
 
     }
 
     public void btn5(View v){
 
+        if(operacion == 6){
+            tv_resultado.setText("");
+            historial = "";
+            historial2="";
+            resultado = 0;
+            operacion = 0;
+        }
+
         numero = tv_resultado.getText().toString();
         numero = numero + "5";
         tv_resultado.setText(numero);
         historial = historial2 + numero;
-        tv_historial.setText(historial);
 
     }
 
     public void btn6(View v){
 
+        if(operacion == 6){
+            tv_resultado.setText("");
+            historial = "";
+            historial2="";
+            resultado = 0;
+            operacion = 0;
+        }
+
         numero = tv_resultado.getText().toString();
         numero = numero + "6";
         tv_resultado.setText(numero);
         historial =historial2 + numero;
-        tv_historial.setText(historial);
 
     }
 
     public void btn7(View v){
 
+        if(operacion == 6){
+            tv_resultado.setText("");
+            historial = "";
+            historial2="";
+            resultado = 0;
+            operacion = 0;
+        }
+
         numero = tv_resultado.getText().toString();
         numero = numero + "7";
         tv_resultado.setText(numero);
         historial = historial2 + numero;
-        tv_historial.setText(historial);
 
     }
 
     public void btn8(View v){
 
+        if(operacion == 6){
+            tv_resultado.setText("");
+            historial = "";
+            historial2="";
+            resultado = 0;
+            operacion = 0;
+        }
+
         numero = tv_resultado.getText().toString();
         numero = numero + "8";
         tv_resultado.setText(numero);
         historial = historial2 + numero;
-        tv_historial.setText(historial);
 
     }
 
     public void btn9(View v){
 
+        if(operacion == 6){
+            tv_resultado.setText("");
+            historial = "";
+            historial2="";
+            resultado = 0;
+            operacion = 0;
+        }
+
         numero = tv_resultado.getText().toString();
         numero = numero + "9";
         tv_resultado.setText(numero);
         historial = historial2 + numero;
-        tv_historial.setText(historial);
 
     }
 
 
     public void btn0(View v){
 
+        if(operacion == 6){
+            tv_resultado.setText("");
+            historial = "";
+            historial2="";
+            resultado = 0;
+            operacion = 0;
+        }
+
         numero = tv_resultado.getText().toString();
         numero = numero + "0";
         tv_resultado.setText(numero);
         historial = historial2 + numero;
-        tv_historial.setText(historial);
-
 
     }
 
@@ -175,19 +243,17 @@ public class MainActivity extends AppCompatActivity {
         numero = numero + ".";
         tv_resultado.setText(numero);
         historial = historial2 + numero;
-        tv_historial.setText(historial);
 
     }
 
-    /*to do
-    public void cambiar_simbolo(View v){
+  /*  public void cambiar_simbolo(View v){
 
-        if (tv_resultado.length() > 0) {
+        if (tv_resultado.length()>0) {
             operacionAnterior();
             tv_resultado.setText("");
             numero = "-" + numero;
             tv_resultado.setText(numero);
-            //operacion = 5;
+            historial = numero;
         }
 
     }*/
@@ -216,8 +282,6 @@ public class MainActivity extends AppCompatActivity {
             historial2 = "";
             historial = String.valueOf(resultado);
         }
-
-
 
     }
 
@@ -296,9 +360,6 @@ public class MainActivity extends AppCompatActivity {
         if(numero.length()>0)
         numero = numero.substring(0, numero.length()-1);
         tv_resultado.setText(numero);
-        if(historial.length()>0)
-        historial = historial.substring(0,historial.length()-1);
-        tv_historial.setText(historial);
 
     }
 
@@ -337,6 +398,9 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
+        tv_historial.setText(historial);
+        historial = "";
+        historial2 = "";
         operacion = 6;
     }
 
